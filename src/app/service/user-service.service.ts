@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../dataModels/user';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 
 @Injectable({providedIn: 'root'})
@@ -19,6 +19,15 @@ export class UserService {
 
   public addUser(user: User) {
     return this.http.post<User>(this.usersUrl + '/nouveauCompte', user);
+  }
+
+  public login(user: User){
+    return this.http.post<User>(this.usersUrl + '/login-success', user).pipe(
+      map((response: any) => {
+        localStorage.setItem('userAuth', JSON.stringify(response));
+        return response;
+      })
+    );
   }
 
 }
