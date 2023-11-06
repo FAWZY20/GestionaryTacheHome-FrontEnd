@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from 'src/app/service/user-service.service';
 
-import { User } from 'src/app/dataModels/user';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../../service/user-service.service';
+
+import { User } from '../../dataModels/user';
 
 @Component({
   selector: 'app-connexion',
@@ -20,8 +21,7 @@ export class ConnexionComponent {
     private userService: UserService
 
   ) { this.user = new User();}
-
-            
+         
   gotoAdminHome() {
     this.router.navigate(['/home']);
   }
