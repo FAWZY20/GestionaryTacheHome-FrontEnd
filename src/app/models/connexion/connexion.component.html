@@ -12,30 +12,29 @@
                                 </div>
                                 -->
 
-                                <form>
+                                <form (ngSubmit)="onSubmit()" #userForm="ngForm">
                                     <p>Veuillez vous connecter à votre compte</p>
-
+                                    <div *ngIf="errorConnexion" class="alert alert-danger" role="alert">
+                                        L'identifiant ou le mot de passe est incorrect
+                                    </div>
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="form2Example11" class="form-control"
-                                            placeholder="Phone number or email address" />
-                                        <label class="form-label" for="form2Example11">Nom d'utilisateur</label>
+                                        <input type="email" id="mail" name="mail" class="form-control" placeholder="Phone number or email address"  [(ngModel)]="user.mail" required #mail="ngModel" />
+                                        <label class="form-label" for="mail">Nom d'utilisateur</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example22" class="form-control" />
-                                        <label class="form-label" for="form2Example22">Mot de passe</label>
+                                        <input type="password" id="password" name="password" class="form-control" [(ngModel)]="user.password" required #password="ngModel"/>
+                                        <label class="form-label" for="password">Mot de passe</label>
                                     </div>
 
                                     <div class="text-center pt-1 mb-5 pb-1">
-                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                                            type="button">connexion</button><br />
+                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">connexion</button><br />
                                         <a class="text-muted" href="#!">Mot de passe oublié ?</a>
                                     </div>
 
                                     <div class="d-flex align-items-center justify-content-center pb-4">
                                         <p class="mb-0 me-2">Don't have an account?</p>
-                                        <button routerLink="nouveauCompte"  type="button" class="btn btn-outline-danger">Créer un nouveau
-                                            compte</button>
+                                        <button routerLink="nouveauCompte"  type="button" class="btn btn-outline-danger">Créer un nouveau compte</button>
                                     </div>
 
                                 </form>
