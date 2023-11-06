@@ -21,11 +21,19 @@ export class ConnexionComponent {
 
   ) { this.user = new User();}
 
+<<<<<<< HEAD
 
   gotoAdminHome() {
     this.router.navigate(['/home']);
   }
 
+=======
+            
+  gotoAdminHome() {
+    this.router.navigate(['/home']);
+  }
+  
+>>>>>>> origin/master
   onSubmit(){
    this.userService.login(this.user).subscribe(result => {
     if(result != null){
