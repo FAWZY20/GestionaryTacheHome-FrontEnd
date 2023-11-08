@@ -11,6 +11,8 @@ import { ConnexionComponent } from './models/connexion/connexion.component';
 import { NouveauCompteComponent } from './models/nouveau-compte/nouveau-compte.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HomePageAdminComponent } from './models/home-page-admin/home-page-admin.component';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full'},
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     HomePageComponent,
     NouveauCompteComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    HomePageAdminComponent
   ],
   imports: [
     FormsModule,

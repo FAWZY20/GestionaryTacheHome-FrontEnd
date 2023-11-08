@@ -5,7 +5,7 @@ import { Observable, map } from 'rxjs';
 
 
 @Injectable({providedIn: 'root'})
-export class UserService {
+export class  UserService {
 
   private usersUrl: string;
 

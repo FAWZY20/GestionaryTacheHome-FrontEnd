@@ -20,8 +20,7 @@ export class ConnexionComponent {
     private userService: UserService
 
   ) { this.user = new User();}
-
-            
+ 
   gotoAdminHome() {
     this.router.navigate(['/home']);
   }
