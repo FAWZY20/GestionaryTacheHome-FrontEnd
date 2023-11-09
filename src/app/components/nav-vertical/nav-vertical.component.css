@@ -1,0 +1,21 @@
+.navbar{
+    background-color: #2C3E50;
+}
+.nav-item{
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    margin: 30px;
+    margin-bottom: 5px;
+}
+
+.logout{
+    margin-top: 165px;
+}
+
+.nav-link{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 17px;
+    color: beige;
+}

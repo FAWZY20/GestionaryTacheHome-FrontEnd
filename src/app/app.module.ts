@@ -12,13 +12,16 @@ import { NouveauCompteComponent } from './models/nouveau-compte/nouveau-compte.c
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomePageAdminComponent } from './models/home-page-admin/home-page-admin.component';
+import { AdminHomeComponent } from './models/admin-home/admin-home.component';
+import { NavVerticalComponent } from './components/nav-vertical/nav-vertical.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full'},
   { path: 'home', component: HomePageComponent },
   { path: 'connexion', component: ConnexionComponent },
-  { path: 'connexion/nouveauCompte', component: NouveauCompteComponent }
+  { path: 'connexion/nouveauCompte', component: NouveauCompteComponent },
+  { path: 'admin', component: AdminHomeComponent }
 ];
 
 @NgModule({
@@ -28,7 +31,9 @@ const appRoutes: Routes = [
     HomePageComponent,
     NouveauCompteComponent,
     ConnexionComponent,
-    HomePageAdminComponent
+    HomePageAdminComponent,
+    AdminHomeComponent,
+    NavVerticalComponent
   ],
   imports: [
     FormsModule,

@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../dataModels/user';
 import { Observable, map } from 'rxjs';
+import * as jwt_decode from "jwt-decode";
 
-
-@Injectable({providedIn: 'root'})
-export class  UserService {
+@Injectable({ providedIn: 'root' })
+export class UserService {
 
   private usersUrl: string;
 
@@ -14,20 +14,31 @@ export class  UserService {
   }
 
   public findUserByMail(mail: String): Observable<User> {
-    return this.http.get<User>(`${this.usersUrl}/usersByMail?mail=${mail}`);
+    return this.http.get<User>(`${this.usersUrl}/usersByMail/${mail}`);
   }
 
   public addUser(user: User) {
     return this.http.post<User>(this.usersUrl + '/nouveauCompte', user);
   }
 
-  public login(user: User){
+  public login(user: User) {
     return this.http.post<User>(this.usersUrl + '/login-success', user).pipe(
       map((response: any) => {
         localStorage.setItem('userAuth', JSON.stringify(response));
         return response;
       })
     );
+  }
+
+  public decodeToken(): Observable<any>{
+    let token: any = localStorage.getItem('userAuth');
+    if (token) {
+      let decodedToken: any = jwt_decode.jwtDecode(token);
+      return this.findUserByMail(decodedToken.sub);
+    } else {
+      console.error('Token non trouvé dans le local storage.');
+      return new Observable();
+    }
   }
 
 }
