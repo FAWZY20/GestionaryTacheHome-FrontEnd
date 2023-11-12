@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from 'src/app/service/user-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-vertical',
@@ -9,7 +10,16 @@ import { UserService } from 'src/app/service/user-service.service';
 export class NavVerticalComponent {
   data: any;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    ) { }
+
+  deconnexion(): void {
+    localStorage.clear();
+    console.log('Déconnexion reussite !');
+    this.router.navigate(['/home']);
+  }
 
   ngOnInit(): void {
     this.userService.decodeToken().subscribe(decodedData => {

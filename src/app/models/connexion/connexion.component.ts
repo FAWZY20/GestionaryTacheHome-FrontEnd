@@ -22,7 +22,7 @@ export class ConnexionComponent {
   ) { this.user = new User();}
  
   gotoAdminHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/admin']);
   }
   
   onSubmit(){

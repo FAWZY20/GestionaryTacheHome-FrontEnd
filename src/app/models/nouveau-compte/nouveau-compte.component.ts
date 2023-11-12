@@ -29,13 +29,12 @@ export class NouveauCompteComponent {
       .subscribe(
         (user: User) => {
           if (user) {
-            this.emailExiste = true; // L'e-mail existe
+            this.emailExiste = true; 
           } else {
-            this.emailExiste = false; // L'e-mail n'existe pas
+            this.emailExiste = false;
           }
         },
         (error) => {
-          // Gérer les erreurs ici si nécessaire
           console.error("Erreur lors de la vérification de l'e-mail : ", error);
         }
       );
@@ -57,8 +56,7 @@ export class NouveauCompteComponent {
   onSubmit() {
     this.checkEmail();
     this.submitClicked = true;
-    console.log(this.emailExiste);
-    if (this.checkMdp() && this.emailExiste) {
+    if (this.checkMdp() || this.emailExiste) {
       this.userService.addUser(this.user).subscribe(result => this.gotoConnexion());
     } else{
       console.log("L'inscription a echouer verifier votre email ou votre mdp");
