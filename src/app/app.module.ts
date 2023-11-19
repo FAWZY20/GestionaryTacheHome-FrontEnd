@@ -14,15 +14,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomePageAdminComponent } from './models/home-page-admin/home-page-admin.component';
 import { AdminHomeComponent } from './models/admin-home/admin-home.component';
 import { NavVerticalComponent } from './components/nav-vertical/nav-vertical.component';
-import { AuthGuard } from './service/auth-guard.service';
+import { AdminPage, ConnexionPage } from './service/auth-guard.service';
 
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent, pathMatch: 'full'},
   { path: 'home', component: HomePageComponent },
-  { path: 'connexion', component: ConnexionComponent },
+  { path: 'connexion', component: ConnexionComponent, canActivate: [ConnexionPage] },
   { path: 'connexion/nouveauCompte', component: NouveauCompteComponent },
-  { path: 'admin', component: AdminHomeComponent, canActivate: [AuthGuard] }
+  { path: 'admin', component: AdminHomeComponent, canActivate: [AdminPage] }
 ];
 
 @NgModule({
