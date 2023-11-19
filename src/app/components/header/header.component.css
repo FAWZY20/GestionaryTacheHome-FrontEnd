@@ -1,8 +1,17 @@
 .header{
-    padding-top: 2%;
-}
-.connexion-btn{
     display: flex;
-    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-top: 1%;
 }
 
+.connexion-nav, .navbar-nav{
+    display: contents;
+    color: white;
+}
+
+.btn{
+    font-size: 17px;
+    color: white;
+}

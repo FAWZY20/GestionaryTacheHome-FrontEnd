@@ -1,13 +1,76 @@
-<div class="container-fluid admin" >
-    <app-nav-vertical></app-nav-vertical>
-    <div class="row">
-        <div class="col-10">
-            <div class="container">
-                The Web Content in detail.
-            </div>
-            <div class="container">
-                <p> The vertical menu can place the left or right side of the web pages. <br> But the default vertical
-                    menu placed on the left side. </p>
+<div class="page-admin row">
+    <div class="col-2">
+        <app-nav-vertical></app-nav-vertical>
+    </div>
+    <div class="col-10" >
+        <div>
+            <div>
+                <div class="img-profil">
+                    <div>
+                        <img class="nav-item-img img-profil" bor height="150" width="150" src={{data.image}} alt="" />
+                    </div>
+                    <div>
+                        <p class="nav-link" href="#">Bienvenue,<br/> {{data.nom}} {{data.prenom}} </p>
+                    </div>
+                </div>
+                <div class="container bloc-tache">
+                    <div class="bloc-tache-one">
+                        <a href="" class="blocTache">
+                            <div>
+                                <img src="" />
+                            </div>
+                            <div>
+                                <p>Tâches</p>
+                            </div>
+                        </a>
+                        <a href="" class="blocTache">
+                            <div>
+                                <img src="" />
+                            </div>
+                            <div>
+                                <p>Liste de courses</p>
+                            </div>
+                        </a>
+                        <a href="" class="blocTache">
+            
+                            <div>
+                                <img src="" />
+                            </div>
+                            <div>
+                                <p>Notes</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bloc-tache-one">
+                        <a href="" class="blocTache">
+                            <div>
+                                <img src="" />
+                            </div>
+                            <div>
+                                <p>Profil</p>
+                            </div>
+                        </a>
+                        <a href="" class="blocTache">
+                            <div>
+                                <img src="" />
+                            </div>
+                            <div>
+                                <p>Paramètres</p>
+                            </div>
+                        </a>
+                        <a href="" class="blocTache">
+                            <div>
+                                <img src="" />
+                            </div>
+                            <div>
+                                <p>Aide</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="btn-deconnexon">
+                    <a href=""> > Se Déconnecter</a>
+                </div>
             </div>
         </div>
     </div>
