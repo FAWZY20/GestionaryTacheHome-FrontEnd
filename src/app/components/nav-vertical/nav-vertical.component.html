@@ -1,44 +1,40 @@
-<div>
-    <div>
-        <nav class="navbar">
-            <ul class="nav navbar-nav">
-                <li class="nav-item profil" *ngIf="data">
-                    <img class="nav-item-img img-profil" bor height="60" width="60" src={{data.image}} alt="" />
-                    <a class="nav-link" href="#"> {{data.nom}} {{data.prenom}} </a>
-                </li>
-                <li class="nav-item">
-                    <img class="nav-item-img" src="../../../assets/icon/house.svg" alt="" />
-                    <a class="nav-link" href="#"> Accueil </a>
-                </li>
-                <li class="nav-item">
-                    <img class="nav-item-img" src="../../../assets/icon/clipboard2-check.svg" alt="" />
-                    <a class="nav-link" href="#"> Tâches </a>
-                </li>
-                <li class="nav-item">
-                    <img class="nav-item-img" src="../../../assets/icon/cart-check.svg" alt="" />
-                    <a class="nav-link" href="#"> Liste de courses </a>
-                </li>
-                <li class="nav-item">
-                    <img class="nav-item-img" src="../../../assets/icon/journal.svg" alt="" />
-                    <a class="nav-link" href="#"> Notes </a>
-                </li>
-                <li class="nav-item">
-                    <img class="nav-item-img" src="../../../assets/icon/person.svg" alt="" />
-                    <a class="nav-link" href="#"> Profil </a>
-                </li>
-                <li class="nav-item">
-                    <img class="nav-item-img" src="../../../assets/icon/gear.svg" alt="" />
-                    <a class="nav-link" href="#"> Paramètres </a>
-                </li>
-                <li class="nav-item">
-                    <img class="nav-item-img" src="../../../assets/icon/question-circle.svg" alt="" />
-                    <a class="nav-link" href="#"> Aide </a>
-                </li>
-                <li class="nav-item logout">
-                    <img class="nav-item-img" src="../../../assets/icon/box-arrow-left.svg" alt="" />
-                    <a class="nav-link" href="#" (click)="deconnexion()"> Se déconnecter </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
+<nav class="navbar">
+    <ul class="nav navbar-nav">
+        <li class="nav-item profil" *ngIf="data">
+            <img class="nav-item-img img-profil" bor height="60" width="60" src={{data.image}} alt="" />
+            <a class="nav-link" href="#"> {{data.nom}} {{data.prenom}} </a>
+        </li>
+        <li class="nav-item">
+            <img class="nav-item-img" src="../../../assets/icon/house.svg" alt="" />
+            <a class="nav-link" routerLink="/admin"> Accueil </a>
+        </li>
+        <li class="nav-item">
+            <img class="nav-item-img" src="../../../assets/icon/clipboard2-check.svg" alt="" />
+            <a class="nav-link" routerLink="/tache"> Tâches </a>
+        </li>
+        <li class="nav-item">
+            <img class="nav-item-img" src="../../../assets/icon/cart-check.svg" alt="" />
+            <a class="nav-link" href="#"> Liste de courses </a>
+        </li>
+        <li class="nav-item">
+            <img class="nav-item-img" src="../../../assets/icon/journal.svg" alt="" />
+            <a class="nav-link" href="#"> Notes </a>
+        </li>
+        <li class="nav-item">
+            <img class="nav-item-img" src="../../../assets/icon/person.svg" alt="" />
+            <a class="nav-link" href="#"> Profil </a>
+        </li>
+        <li class="nav-item">
+            <img class="nav-item-img" src="../../../assets/icon/gear.svg" alt="" />
+            <a class="nav-link" href="#"> Paramètres </a>
+        </li>
+        <li class="nav-item">
+            <img class="nav-item-img" src="../../../assets/icon/question-circle.svg" alt="" />
+            <a class="nav-link" href="#"> Aide </a>
+        </li>
+        <li class="nav-item logout">
+            <img class="nav-item-img" src="../../../assets/icon/box-arrow-left.svg" alt="" />
+            <a class="nav-link" href="#" (click)="deconnexion()"> Se déconnecter </a>
+        </li>
+    </ul>
+</nav>

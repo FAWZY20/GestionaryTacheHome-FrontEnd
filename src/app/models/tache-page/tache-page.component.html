@@ -1,0 +1,33 @@
+<div class="page-admin row">
+    <div class="col-2">
+        <app-nav-vertical></app-nav-vertical>
+    </div>
+    <div class="col-10">
+        <p class="tittleTache">Vos taches</p>
+        <div>
+            <button type="button" routerLink="/NouvelleTache" class="btn btn-newTache btn-primary">Nouvele tache</button>
+        </div>
+        <div class="list-tache">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Tache</th>
+                        <th scope="col">Pièce</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Priorité</th>
+                        <th scope="col">Echéance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tache of taches">
+                        <td>{{tache.titre}}</td>
+                        <td>{{tache.piece}}</td>
+                        <td>{{tache.description}}</td>
+                        <td>{{tache.priorite}}</td>
+                        <td>{{tache.dateFin}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

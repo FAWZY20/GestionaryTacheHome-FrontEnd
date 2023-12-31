@@ -16,7 +16,113 @@
     </div>
     <div class="custom-shape-divider-bottom-1700205430">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"></path>
         </svg>
+    </div>
+</div>
+<div class="container">
+    <div class="row description">
+        <div class="description-title">
+            <p class="title">GERER MA MAISON EASY</p>
+        </div>
+        <div class="description-text">
+            <p>
+                Bienvenue sur notre GERER MA MAISON EASY ! Organisez vos activités quotidiennes de manière efficace et
+                assurez-vous de ne rien oublier. Que ce soit les tâches ménagères, les courses à faire, ou d'autres
+                engagements,
+                nous sommes là pour vous aider à rester sur la bonne voie.
+            </p>
+        </div>
+        <div class="fonction-title" id="Fonctionnalites">
+            <p>Fonctionnalités</p>
+        </div>
+        <div class="fonction">
+            <div>
+                <div>
+                    <img class="fonction-img" src="../../../assets/img/menage.png" height="140" width="170"
+                        alt="tache menagere" />
+                </div>
+                <div>
+                    <p>tache du domicile</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img class="fonction-img" src="../../../assets/img/list.png" height="140" width="170"
+                        alt="liste de course" />
+                </div>
+                <div>
+                    <p>liste de course </p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img class="fonction-img" src="../../../assets/img/note.png" height="140" width="170" alt="notes" />
+                </div>
+                <div>
+                    <p>Note</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="temoignages">
+        <div class="temoignages-title" id="temoignages">
+            <p>Témoignages</p>
+        </div>
+        <div *ngIf="temoignage; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>Content to render when condition is true.</ng-template>
+        <ng-template #elseBlock>
+            <p class="temoignages-avis">
+                Il n'y a pas d'avis <a href="">laisser un avis</a>
+            </p>
+        </ng-template>
+    </div>
+
+    <div class="col-md-9 mb-md-0 mb-5">
+        <div class="contact-title" id="contact">
+            <p>Contactez-nous</p>
+        </div>
+        <div >
+            <p>Avez-vous des questions? N'hésitez pas à nous contacter directement. Notre équipe reviendra vers vous dans quelques heures pour vous aider.</p>
+        </div>
+        <form id="contact-form" name="contact-form">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <input type="text" id="name" name="name" class="form-control">
+                        <label for="name" class="">Votre prénom</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <input type="text" id="email" name="email" class="form-control">
+                        <label for="email" class="">Votre email</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form mb-0">
+                        <input type="text" id="subject" name="subject" class="form-control">
+                        <label for="subject" class="">Sujet</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form">
+                        <textarea type="text" id="message" name="message" rows="2"
+                            class="form-control md-textarea"></textarea>
+                        <label for="message">Votre message</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="text-center text-md-left">
+            <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Envoyer</a>
+        </div>
+        <div class="status"></div>
     </div>
 </div>

@@ -25,7 +25,6 @@ export class NavVerticalComponent {
     this.userService.decodeToken().subscribe(decodedData => {
       if (decodedData) {
         this.data = decodedData
-        console.log(decodedData);
       }
     });
   }

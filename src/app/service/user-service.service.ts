@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../dataModels/user';
-import { Observable, map } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 import * as jwt_decode from "jwt-decode";
+import { Taches } from '../dataModels/taches';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -17,8 +18,20 @@ export class UserService {
     return this.http.get<User>(`${this.usersUrl}/usersByMail/${mail}`);
   }
 
+  public findFamillyByName(nom: String): Observable<User> {
+    return this.http.get<User>(`${this.usersUrl}/famille/${nom}`);
+  }
+
   public addUser(user: User) {
     return this.http.post<User>(this.usersUrl + '/nouveauCompte', user);
+  }
+
+  public addTaches(tache: Taches) {
+    return this.http.post<Taches>(this.usersUrl + '/nouvelleTache', tache)
+  }
+
+  public getTache(nom: String){
+    return this.http.get<Taches>(this.usersUrl + `/tache/${nom}`)
   }
 
   public login(user: User) {

@@ -1,0 +1,27 @@
+.footer{
+    padding: 50px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu a{
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.menu li{
+    margin-bottom: 15px;
+    list-style-type: none;
+}
+
+.btn{
+    color: white;
+    background-color: #2C3E50;
+    font-size: 25px;
+    font-weight: bold;
+}

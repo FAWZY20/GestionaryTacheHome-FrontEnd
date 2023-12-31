@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-2">
+        <app-nav-vertical></app-nav-vertical>
+    </div>
+    <div class="col-10">
+        <p class="title-newTache">Ajouter une Tâche</p>
+
+        <form (ngSubmit)="onSubmit()" #tacheForm="ngForm">
+            <div class="form-row">
+                <div class="col">
+                    <label for="taskTitle">Titre de la Tâche:</label><br />
+                    <input class="form-control" type="text" id="taskTitle" name="taskTitle" [(ngModel)]="tache.titre"
+                        required #titre="ngModel">
+                </div>
+                <div class="col">
+                    <label for="priority">Pour qui :</label><br />
+                    <select class="form-control" id="priority" name="priority" [(ngModel)]="tache.user" required
+                        #user="ngModel">
+                        <option *ngFor="let famille of family | async" [ngValue]="famille.id">{{famille.prenom}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label for="taskDescription">Description:</label><br />
+                <textarea id="taskDescription" name="taskDescription" [(ngModel)]="tache.description" required
+                    #description="ngModel"></textarea>
+            </div>
+            <div>
+                <label for="dueDate">Date d'échéance:</label><br />
+                <input type="date" id="dueDate" name="dueDate" [(ngModel)]="tache.dateFin" required #dateFin="ngModel">
+            </div>
+            <div>
+                <label for="priority">Priorité:</label><br />
+                <select id="priority" name="priority" [(ngModel)]="tache.priorite" required #priorite="ngModel">
+                    <option value="Haute">Haute</option>
+                    <option value="Moyenne">Moyenne</option>
+                    <option value="Basse">Basse</option>
+                </select>
+            </div>
+            <div>
+                <label for="location">Lieu ou Pièce:</label><br />
+                <input type="text" id="location" name="location" [(ngModel)]="tache.piece" required #piece="ngModel">
+            </div>
+            <div>
+                <button [disabled]="!tacheForm.form.valid" type="submit">Ajouter la Tâche</button>
+            </div>
+
+        </form>
+    </div>
+</div>

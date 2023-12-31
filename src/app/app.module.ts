@@ -11,10 +11,12 @@ import { ConnexionComponent } from './models/connexion/connexion.component';
 import { NouveauCompteComponent } from './models/nouveau-compte/nouveau-compte.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { HomePageAdminComponent } from './models/home-page-admin/home-page-admin.component';
 import { AdminHomeComponent } from './models/admin-home/admin-home.component';
 import { NavVerticalComponent } from './components/nav-vertical/nav-vertical.component';
 import { AdminPage, ConnexionPage } from './service/auth-guard.service';
+import { TachePageComponent } from './models/tache-page/tache-page.component';
+import { NouvelleTacheComponent } from './models/nouvelle-tache/nouvelle-tache.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 const appRoutes: Routes = [
@@ -22,7 +24,9 @@ const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'connexion', component: ConnexionComponent, canActivate: [ConnexionPage] },
   { path: 'connexion/nouveauCompte', component: NouveauCompteComponent },
-  { path: 'admin', component: AdminHomeComponent, canActivate: [AdminPage] }
+  { path: 'admin', component: AdminHomeComponent, canActivate: [AdminPage] },
+  { path: 'tache', component: TachePageComponent, canActivate: [AdminPage] },
+  { path: 'NouvelleTache', component: NouvelleTacheComponent, canActivate: [AdminPage] }
 ];
 
 @NgModule({
@@ -32,9 +36,11 @@ const appRoutes: Routes = [
     HomePageComponent,
     NouveauCompteComponent,
     ConnexionComponent,
-    HomePageAdminComponent,
     AdminHomeComponent,
-    NavVerticalComponent
+    NavVerticalComponent,
+    TachePageComponent,
+    NouvelleTacheComponent,
+    FooterComponent
   ],
   imports: [
     FormsModule,

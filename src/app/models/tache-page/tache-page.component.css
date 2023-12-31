@@ -1,0 +1,16 @@
+.tittleTache{
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+}
+.btn-newTache{
+    margin-left: 80px;
+    margin-top: 50px;
+    font-size: 21px;
+    background-color: #2C3E50;
+    border-radius: 0px !important;
+}
+
+.list-tache{
+    padding:50px;
+}
