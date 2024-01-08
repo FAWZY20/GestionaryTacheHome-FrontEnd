@@ -1,4 +1,6 @@
 .page-admin{
+    padding: 0;
+    margin-right: 0 !important;
     background-color: white;
     display: flex;
     flex-direction: row;

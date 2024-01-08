@@ -34,6 +34,10 @@ export class UserService {
     return this.http.get<Taches>(this.usersUrl + `/tache/${nom}`)
   }
 
+  public activeTache(userId: string, id: number, tache: Taches){
+    return this.http.put<Taches>(this.usersUrl + `/updateTache/${userId}/${id}`, tache)
+  }
+
   public login(user: User) {
     return this.http.post<User>(this.usersUrl + '/login-success', user).pipe(
       map((response: any) => {

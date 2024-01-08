@@ -1,4 +1,4 @@
-<div class="page-admin row">
+<div class="page-tache">
     <div class="col-2">
         <app-nav-vertical></app-nav-vertical>
     </div>
@@ -8,26 +8,62 @@
             <button type="button" routerLink="/NouvelleTache" class="btn btn-newTache btn-primary">Nouvele tache</button>
         </div>
         <div class="list-tache">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Tache</th>
-                        <th scope="col">Pièce</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Priorité</th>
-                        <th scope="col">Echéance</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let tache of taches">
-                        <td>{{tache.titre}}</td> 
-                        <td>{{tache.piece}}</td>
-                        <td>{{tache.description}}</td>
-                        <td>{{tache.priorite}}</td>
-                        <td>{{tache.dateFin}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div>
+                <p>liste de vos taches</p>
+            </div>
+            <div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Tache</th>
+                            <th scope="col">Pièce</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Priorité</th>
+                            <th scope="col">Echéance</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tache of tachesAttente">
+                            <td>{{tache.titre}}</td>
+                            <td>{{tache.piece}}</td>
+                            <td>{{tache.description}}</td>
+                            <td>{{tache.priorite}}</td>
+                            <td>{{tache.dateFin}}</td>
+                            <td><button type="submit" (click)="activerTache(tache.id)" class="btn btn-addTache btn-primary">Activer la tache</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="list-tache">
+            <div>
+                <p>liste de vos taches actif</p>
+            </div>
+            <div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Tache</th>
+                            <th scope="col">Pièce</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Priorité</th>
+                            <th scope="col">Echéance</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tache of tachesEnCour">
+                            <td>{{tache.titre}}</td>
+                            <td>{{tache.piece}}</td>
+                            <td>{{tache.description}}</td>
+                            <td>{{tache.priorite}}</td>
+                            <td>{{tache.dateFin}}</td>
+                            <td><button type="submit" (click)="activerTache(tache.id)" class="btn btn-addTache btn-primary">Fini</button></td>        
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
