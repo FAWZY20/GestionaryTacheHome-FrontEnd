@@ -38,6 +38,10 @@ export class UserService {
     return this.http.put<Taches>(this.usersUrl + `/updateTache/${userId}/${id}`, tache)
   }
 
+  public deleteTache(id: number){
+    return this.http.delete(this.usersUrl + `/deleteTache/${id}`)
+  }
+
   public login(user: User) {
     return this.http.post<User>(this.usersUrl + '/login-success', user).pipe(
       map((response: any) => {

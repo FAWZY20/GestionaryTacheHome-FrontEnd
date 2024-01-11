@@ -20,18 +20,25 @@ export class TachePageComponent {
 
 
   ngOnInit(): void {
-      this.allTacheAttente();
-      this.allTacheEnCour();
+    this.allTacheAttente();
+    this.allTacheEnCour();
   }
 
   activerTache(id: number): void {
     this.userService.decodeToken().subscribe(decodedData => {
       if (decodedData) {
         this.userService.activeTache(decodedData.id, id, this.updateStatut).subscribe(() => {
+          location.reload();
           console.log('Tâche mise à jour avec succès.');
         });
       }
     });
+  }
+
+
+  deleteTache(id: number): void {
+    this.userService.deleteTache(id).subscribe(() => {location.reload()});
+    console.log('la tache et supprimer avec succès. ' + id);
   }
 
   allTacheAttente(): void {
