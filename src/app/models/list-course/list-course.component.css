@@ -1,0 +1,33 @@
+.page-course{
+    display: flex;
+    flex-direction: row;
+}
+
+.tittle-Course{
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.ajt-article{
+    margin-bottom: 5%;
+}
+
+.list-course{
+    padding-right: 30%;
+    padding-left: 30%;
+}
+
+.table{
+    border: 1px solid black;
+}
+
+.formAddArticl{
+    background-color: grey;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.formAddArticl-input{
+    margin-bottom: 15px;
+}

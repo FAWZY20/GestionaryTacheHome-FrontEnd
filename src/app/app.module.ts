@@ -17,6 +17,7 @@ import { AdminPage, ConnexionPage } from './service/auth-guard.service';
 import { TachePageComponent } from './models/tache-page/tache-page.component';
 import { NouvelleTacheComponent } from './models/nouvelle-tache/nouvelle-tache.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ListCourseComponent } from './models/list-course/list-course.component';
 
 
 const appRoutes: Routes = [
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
   { path: 'connexion/nouveauCompte', component: NouveauCompteComponent },
   { path: 'admin', component: AdminHomeComponent, canActivate: [AdminPage] },
   { path: 'tache', component: TachePageComponent, canActivate: [AdminPage] },
-  { path: 'NouvelleTache', component: NouvelleTacheComponent, canActivate: [AdminPage] }
+  { path: 'NouvelleTache', component: NouvelleTacheComponent, canActivate: [AdminPage] },
+  { path: 'listeCourse', component: ListCourseComponent, canActivate: [AdminPage] }
 ];
 
 @NgModule({
@@ -40,7 +42,8 @@ const appRoutes: Routes = [
     NavVerticalComponent,
     TachePageComponent,
     NouvelleTacheComponent,
-    FooterComponent
+    FooterComponent,
+    ListCourseComponent
   ],
   imports: [
     FormsModule,
