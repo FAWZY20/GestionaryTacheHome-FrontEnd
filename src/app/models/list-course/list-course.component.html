@@ -33,7 +33,7 @@
                     <tr *ngFor="let item of localStorageData">
                         <td>{{item.key}}</td>
                         <td>{{item.value}}</td>
-                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"></td>
+                        <td>  <button (click)="deleteArticle(item.key)" type="submit" class="btn btn-danger">Supprimer</button></td>
                     </tr>
                 </tbody>
             </table>

@@ -25,6 +25,10 @@ export class ListCourseComponent {
     return keys.map(key => ({ key, value: localStorage.getItem(key) }));
   }
 
+  deleteArticle(key: string){
+    localStorage.removeItem(key);
+  }
+
   ngOnInit(): void {
     this.localStorageData = this.localStorageService.getAllItems("userAuth");
   }
