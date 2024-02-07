@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -18,6 +18,8 @@ import { TachePageComponent } from './models/tache-page/tache-page.component';
 import { NouvelleTacheComponent } from './models/nouvelle-tache/nouvelle-tache.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListCourseComponent } from './models/list-course/list-course.component';
+import { NotesComponent } from './models/notes/notes.component';
+import { FormNoteComponent } from './components/form-note/form-note.component';
 
 
 const appRoutes: Routes = [
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
   { path: 'admin', component: AdminHomeComponent, canActivate: [AdminPage] },
   { path: 'tache', component: TachePageComponent, canActivate: [AdminPage] },
   { path: 'NouvelleTache', component: NouvelleTacheComponent, canActivate: [AdminPage] },
-  { path: 'listeCourse', component: ListCourseComponent, canActivate: [AdminPage] }
+  { path: 'listeCourse', component: ListCourseComponent, canActivate: [AdminPage] },
+  { path: 'note', component: NotesComponent, canActivate: [AdminPage] }
 ];
 
 @NgModule({
@@ -43,10 +46,13 @@ const appRoutes: Routes = [
     TachePageComponent,
     NouvelleTacheComponent,
     FooterComponent,
-    ListCourseComponent
+    ListCourseComponent,
+    NotesComponent,
+    FormNoteComponent
   ],
   imports: [
     FormsModule,
+    MatDialogModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,

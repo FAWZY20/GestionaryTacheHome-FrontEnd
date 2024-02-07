@@ -1,0 +1,25 @@
+.poppup-FormNote{
+    width: 30vw;
+    padding: 5%;
+}
+
+.bloc-title{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn-closse{
+    border: 0px;
+    font-weight: bold;
+}
+
+.title-poppup{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.form-group{
+    margin-bottom: 5%;
+}

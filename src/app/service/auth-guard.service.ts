@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminPage {
+
   constructor(private router: Router) { }
 
   canActivate(
@@ -14,6 +15,7 @@ export class AdminPage {
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     const isAuthenticated = localStorage.getItem('userAuth');
+    
     if (isAuthenticated) {
       return true; 
     } else {

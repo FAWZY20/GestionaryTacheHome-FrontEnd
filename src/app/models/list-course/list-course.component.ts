@@ -27,6 +27,7 @@ export class ListCourseComponent {
 
   deleteArticle(key: string){
     localStorage.removeItem(key);
+    location.reload();
   }
 
   ngOnInit(): void {
@@ -37,6 +38,7 @@ export class ListCourseComponent {
     const key = this.course.produit;
     const value = this.course.qte;
     this.localStorageService.addItem(key, value);
+    location.reload();
   }
 
 }

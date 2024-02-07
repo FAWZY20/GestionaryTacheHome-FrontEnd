@@ -1,0 +1,23 @@
+.page-note{
+    display: flex;
+    flex-direction: row;
+}
+
+.tittle-Note{
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.btn-createNote{
+    border-radius: 0px !important;
+    background-color: #2C3E50;
+    font-weight: bold;
+    font-size: 21px;
+    margin-top: 3%;
+    margin-left: 10%;
+}
+
+.btn-createNote:hover{
+    background-color: #2C3E50;
+}

@@ -4,6 +4,7 @@ import { User } from '../dataModels/user';
 import { Observable, map, take } from 'rxjs';
 import * as jwt_decode from "jwt-decode";
 import { Taches } from '../dataModels/taches';
+import { Note } from '../dataModels/note';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -40,6 +41,18 @@ export class UserService {
 
   public deleteTache(id: number){
     return this.http.delete(this.usersUrl + `/deleteTache/${id}`)
+  }
+
+  public addNote(note: Note){
+    return this.http.post<Note>(this.usersUrl + '/nouvelleNote', note)
+  }
+
+  public getNote(userId: string){
+    return this.http.get<Note>( this.usersUrl +  `/afficherNote/${userId}`)
+  }
+
+  public deleteNote(id: number){
+    return this.http.delete(this.usersUrl + `/deleteNote/${id}`)
   }
 
   public login(user: User) {
