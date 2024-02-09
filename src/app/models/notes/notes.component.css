@@ -1,15 +1,15 @@
-.page-note{
+.page-note {
     display: flex;
     flex-direction: row;
 }
 
-.tittle-Note{
+.tittle-Note {
     text-align: center;
     font-size: 60px;
     font-weight: bold;
 }
 
-.btn-createNote{
+.btn-createNote {
     border-radius: 0px !important;
     background-color: #2C3E50;
     font-weight: bold;
@@ -18,6 +18,56 @@
     margin-left: 10%;
 }
 
-.btn-createNote:hover{
+.btn-createNote:hover {
     background-color: #2C3E50;
+}
+
+.bloc-note {
+    display: flex;
+    flex-direction: column;
+}
+
+.listNote {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 8%;
+}
+
+.lnote {
+    width: 250px;
+    margin: 15px;
+}
+
+.note_titre {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #2C3E50;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.titre {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.close {
+    border: 1px solid white;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(138, 6, 6);
+}
+
+.note_description{
+    font-weight: 700;
+    font-style: italic;
+    padding: 10px;
+    background-color: #e6c405;
 }

@@ -8,16 +8,16 @@
         </div>
     </div>
     <div>
-        <form>
+        <form (ngSubmit)="onSubmit()" #userForm="ngForm">
             <div class="form-group">
-                <label for="exampleInputPassword1">Titre</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" >
+                <label for="titre">Titre</label>
+                <input type="text" class="form-control" id="titre" name="titre" [(ngModel)]="note.titre" required #titre="ngModel" >
             </div>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Note</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="description">Note</label>
+                <textarea class="form-control" id="description" name="description" rows="3" [(ngModel)]="note.description" required #description="ngModel"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Ajouter </button>
+             <button type="submit" class="btn btn-primary btn-lg">Ajouter</button>
         </form>
     </div>
-</div>
+</div> 

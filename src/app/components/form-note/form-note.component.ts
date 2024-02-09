@@ -16,7 +16,12 @@ export class FormNoteComponent {
     ){this.note = new Note }
 
   onSubmit(){
-    this.userService.addNote(this.note)
+    this.userService.decodeToken().subscribe(decodedData => {
+      if (decodedData) {
+        this.note.user = decodedData.id;
+        this.userService.addNote(this.note).subscribe(() => location.reload())
+      }
+    });
   }
 
   close(): void {

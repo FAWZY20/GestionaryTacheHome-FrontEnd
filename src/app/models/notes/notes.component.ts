@@ -31,7 +31,11 @@ export class NotesComponent {
   openPopup(): void {
     this.dialog.open(FormNoteComponent);
   }
-
+  deleteNote(id: number): void {
+    this.userService.deleteNote(id).subscribe(() => {
+      location.reload();
+    });
+  }
   ngOnInit(): void {
     this.getNotes();
   }
