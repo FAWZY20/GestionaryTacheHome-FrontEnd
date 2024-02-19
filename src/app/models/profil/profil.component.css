@@ -1,0 +1,13 @@
+.page-profil{
+    display: flex;
+    flex-direction: row;
+}
+
+.profil{
+    padding-top: 80px;
+    justify-content: center;
+}
+
+.tab-family{
+    margin-top: 25px;
+}

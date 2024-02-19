@@ -2,7 +2,7 @@
     <div class="col-2">
         <app-nav-vertical></app-nav-vertical>
     </div>
-    <div class="col-10" >
+    <div class="col-10">
         <div>
             <div>
                 <div class="img-profil">
@@ -10,34 +10,24 @@
                         <img class="nav-item-img img-profil" bor height="150" width="150" src={{data.image}} alt="" />
                     </div>
                     <div>
-                        <p class="nav-link" href="#">Bienvenue,<br/> {{data.nom}} {{data.prenom}} </p>
+                        <p class="nav-link" href="#">Bienvenue,<br /> {{data.nom}} {{data.prenom}} </p>
                     </div>
                 </div>
                 <div class="container bloc-tache">
                     <div class="bloc-tache-one">
                         <a href="" class="blocTache">
                             <div>
-                                <img src="" />
-                            </div>
-                            <div>
                                 <a routerLink="/tache">Tâches</a>
                             </div>
                         </a>
                         <a href="" class="blocTache">
                             <div>
-                                <img src="" />
-                            </div>
-                            <div>
-                                <p>Liste de courses</p>
+                                <a routerLink="/listeCourse">Liste de courses</a>
                             </div>
                         </a>
                         <a href="" class="blocTache">
-            
                             <div>
-                                <img src="" />
-                            </div>
-                            <div>
-                                <p>Notes</p>
+                                <a routerLink="/note">Notes</a>
                             </div>
                         </a>
                     </div>

@@ -20,6 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ListCourseComponent } from './models/list-course/list-course.component';
 import { NotesComponent } from './models/notes/notes.component';
 import { FormNoteComponent } from './components/form-note/form-note.component';
+import { ProfilComponent } from './models/profil/profil.component';
 
 
 const appRoutes: Routes = [
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
   { path: 'tache', component: TachePageComponent, canActivate: [AdminPage] },
   { path: 'NouvelleTache', component: NouvelleTacheComponent, canActivate: [AdminPage] },
   { path: 'listeCourse', component: ListCourseComponent, canActivate: [AdminPage] },
-  { path: 'note', component: NotesComponent, canActivate: [AdminPage] }
+  { path: 'note', component: NotesComponent, canActivate: [AdminPage] },
+  { path: 'profil', component: ProfilComponent, canActivate: [AdminPage] }
 ];
 
 @NgModule({
@@ -48,7 +50,8 @@ const appRoutes: Routes = [
     FooterComponent,
     ListCourseComponent,
     NotesComponent,
-    FormNoteComponent
+    FormNoteComponent,
+    ProfilComponent
   ],
   imports: [
     FormsModule,

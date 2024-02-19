@@ -12,7 +12,7 @@ export class UserService {
   private usersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8081';
+    this.usersUrl = 'http://35.180.120.57';
   }
 
   public findUserByMail(mail: String): Observable<User> {
@@ -25,6 +25,10 @@ export class UserService {
 
   public addUser(user: User) {
     return this.http.post<User>(this.usersUrl + '/nouveauCompte', user);
+  }
+
+  public addUserFamily(user: User) {
+    return this.http.post<User>(this.usersUrl + '/newUserFamilly', user);
   }
 
   public addTaches(tache: Taches) {
