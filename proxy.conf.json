@@ -1,0 +1,6 @@
+{
+    "/api": {
+        "target": "http://gerermamaisoneasy-130830575.eu-west-3.elb.amazonaws.com",
+        "secure": false
+    }
+}

@@ -12,7 +12,7 @@ export class UserService {
   private usersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://35.180.120.57';
+    this.usersUrl = 'http://gerermamaisoneasy-130830575.eu-west-3.elb.amazonaws.com';
   }
 
   public findUserByMail(mail: String): Observable<User> {
