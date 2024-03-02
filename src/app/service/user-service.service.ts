@@ -12,7 +12,8 @@ export class UserService {
   private usersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://gerermamaisoneasy-130830575.eu-west-3.elb.amazonaws.com';
+    //this.usersUrl = 'http://gerermamaisoneasy-130830575.eu-west-3.elb.amazonaws.com';
+    this.usersUrl = 'http://localhost:8081';
   }
 
   public findUserByMail(mail: String): Observable<User> {
