@@ -14,6 +14,9 @@
         <div class="col-lg-5">
             <div class="card mb-4">
                 <div class="card-body">
+                    <div class="titre-info">
+                        <p>Information sur le compte</p>
+                    </div>
                     <div class="row">
                         <div class="col-sm-3">
                             <p class="mb-0">Nom</p>
@@ -40,13 +43,21 @@
                             <p class="text-muted mb-0">{{data.mail}} </p>
                         </div>
                     </div>
+                    <div class="row btn-acount">
+                        <div class="col-sm-6">
+                            <button type="button" (click)="deleteUser()" class="btn btn-danger">Supprimer le compte</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" (click)="updateUser()" class="btn btn-primary">Modifier le compte</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card mb-4 mb-md-0">
                         <div class="card-body">
-                            <p class="mb-4">Famille</p>
+                            <p class="mb-4 titre-famille">Famille</p>
                             <button type="button" (click)="getFormUser()" class="btn btn-primary">Ajouter un menbre</button>
                             <div *ngIf="formUser" class="form_user">
                                 <form (ngSubmit)="onSubmit()" #courseForm="ngForm">

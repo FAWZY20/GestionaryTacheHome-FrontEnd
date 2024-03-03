@@ -28,6 +28,10 @@ export class UserService {
     return this.http.post<User>(this.usersUrl + '/nouveauCompte', user);
   }
 
+  public deleteUser(userId: number) {
+    return this.http.delete<User>(this.usersUrl + `/deleteUser/${userId}`)
+  }
+
   public addUserFamily(user: User) {
     return this.http.post<User>(this.usersUrl + '/newUserFamilly', user);
   }

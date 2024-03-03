@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from 'src/app/dataModels/user';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user-service.service';
 
 @Component({
@@ -13,15 +14,33 @@ export class ProfilComponent {
   formUser: boolean = false;
 
   constructor(
-    private userService: UserService
-  ){this.user = new User()}
+    private userService: UserService,
+    private router: Router,
 
-  getFormUser(){
+  ) { this.user = new User() }
+
+  getFormUser() {
     this.formUser = true;
   }
 
-  onSubmit(){
+  onSubmit() {
 
+  }
+
+  gotoHomePage() {
+    this.router.navigate(['/']);
+  }
+
+  updateUser() {
+
+  }
+
+  deleteUser() {
+    this.userService.deleteUser(this.data.id).subscribe(() => {
+      this.gotoHomePage();
+      localStorage.clear();
+      console.log("utilisateur supprimer");
+    })
   }
 
   ngOnInit(): void {
