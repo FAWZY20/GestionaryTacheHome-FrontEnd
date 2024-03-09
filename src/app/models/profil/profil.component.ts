@@ -23,10 +23,6 @@ export class ProfilComponent {
     this.formUser = true;
   }
 
-  onSubmit() {
-
-  }
-
   gotoHomePage() {
     this.router.navigate(['/']);
   }
@@ -40,6 +36,15 @@ export class ProfilComponent {
       this.gotoHomePage();
       localStorage.clear();
       console.log("utilisateur supprimer");
+    })
+  }
+
+  onSubmit() {
+    this.user.nom = this.data.nom;
+    this.user.password = this.userService.generatePwd();
+    this.userService.addUserFamily(this.user).subscribe(() => {
+      location.reload()
+      console.log("l'utilisateur a etait ajouter avec succes");
     })
   }
 
