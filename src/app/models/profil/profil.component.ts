@@ -10,6 +10,7 @@ import { UserService } from 'src/app/service/user-service.service';
 })
 export class ProfilComponent {
   data: any;
+  familly: any;
   user: User;
   formUser: boolean = false;
 
@@ -23,17 +24,13 @@ export class ProfilComponent {
     this.formUser = true;
   }
 
-  gotoHomePage() {
-    this.router.navigate(['/']);
-  }
-
   updateUser() {
 
   }
 
   deleteUser() {
     this.userService.deleteUser(this.data.id).subscribe(() => {
-      this.gotoHomePage();
+      this.router.navigate(['/']);
       localStorage.clear();
       console.log("utilisateur supprimer");
     })
@@ -52,6 +49,10 @@ export class ProfilComponent {
     this.userService.decodeToken().subscribe(decodedData => {
       if (decodedData) {
         this.data = decodedData
+        this.userService.findFamillyByName(decodedData.nom).subscribe(result => {
+          const familyArray = Object.values(result);
+          this.familly = familyArray.filter(user => user.mail !== decodedData.mail);
+        })
       }
     });
   }

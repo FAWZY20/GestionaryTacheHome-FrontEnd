@@ -45,10 +45,12 @@
                     </div>
                     <div class="row btn-acount">
                         <div class="col-sm-6">
-                            <button type="button" (click)="deleteUser()" class="btn btn-danger">Supprimer le compte</button>
+                            <button type="button" (click)="deleteUser()" class="btn btn-danger">Supprimer le
+                                compte</button>
                         </div>
                         <div class="col-sm-6">
-                            <button type="button" (click)="updateUser()" class="btn btn-primary">Modifier le compte</button>
+                            <button type="button" (click)="updateUser()" class="btn btn-primary">Modifier le
+                                compte</button>
                         </div>
                     </div>
                 </div>
@@ -58,7 +60,8 @@
                     <div class="card mb-4 mb-md-0">
                         <div class="card-body">
                             <p class="mb-4 titre-famille">Famille</p>
-                            <button type="button" (click)="getFormUser()" class="btn btn-primary">Ajouter un menbre</button>
+                            <button type="button" (click)="getFormUser()" class="btn btn-primary">Ajouter un
+                                menbre</button>
                             <div *ngIf="formUser" class="form_user">
                                 <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
                                     <div class="row formAddArticl-input">
@@ -85,6 +88,13 @@
                                             <th scope="col">action</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                        <tr *ngFor="let famille of familly">
+                                            <td>{{famille.prenom}} </td>
+                                            <td>{{famille.mail}}</td>
+                                            <td>test</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
