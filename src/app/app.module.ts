@@ -21,6 +21,7 @@ import { ListCourseComponent } from './models/list-course/list-course.component'
 import { NotesComponent } from './models/notes/notes.component';
 import { FormNoteComponent } from './components/form-note/form-note.component';
 import { ProfilComponent } from './models/profil/profil.component';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 
 const appRoutes: Routes = [
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     ListCourseComponent,
     NotesComponent,
     FormNoteComponent,
-    ProfilComponent
+    ProfilComponent,
+    UpdateUserComponent
   ],
   imports: [
     FormsModule,
