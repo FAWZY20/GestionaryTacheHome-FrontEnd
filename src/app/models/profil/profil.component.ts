@@ -28,11 +28,15 @@ export class ProfilComponent {
 
   }
 
-  deleteUser() {
-    this.userService.deleteUser(this.data.id).subscribe(() => {
-      this.router.navigate(['/']);
-      localStorage.clear();
-      console.log("utilisateur supprimer");
+  deleteUser(id:number) {
+    this.userService.deleteUser(id).subscribe(() => {
+      if(id == this.data.id){
+        this.router.navigate(['/']);
+        localStorage.clear();
+      }else{
+        location.reload();
+        console.log("utilisateur supprimer");
+      }
     })
   }
 

@@ -45,7 +45,7 @@
                     </div>
                     <div class="row btn-acount">
                         <div class="col-sm-6">
-                            <button type="button" (click)="deleteUser()" class="btn btn-danger">Supprimer le
+                            <button type="button" (click)="deleteUser(data.id)" class="btn btn-danger">Supprimer le
                                 compte</button>
                         </div>
                         <div class="col-sm-6">
@@ -85,14 +85,14 @@
                                         <tr>
                                             <th scope="col">prenom</th>
                                             <th scope="col">email</th>
-                                            <th scope="col">action</th>
+                                            <th scope="col">supprimer</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let famille of familly">
                                             <td>{{famille.prenom}} </td>
                                             <td>{{famille.mail}}</td>
-                                            <td>test</td>
+                                            <td> <button type="button" (click)="deleteUser(famille.id)" class="btn btn-danger">X</button></td>
                                         </tr>
                                     </tbody>
                                 </table>
