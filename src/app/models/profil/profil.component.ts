@@ -43,6 +43,7 @@ export class ProfilComponent {
   onSubmit() {
     this.user.nom = this.data.nom;
     this.user.password = this.userService.generatePwd();
+    this.user.maitre = false;
     this.userService.addUserFamily(this.user).subscribe(() => {
       location.reload()
       console.log("l'utilisateur a etait ajouter avec succes");
