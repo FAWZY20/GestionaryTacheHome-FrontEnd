@@ -4,7 +4,7 @@
     </div>
     <div class="col-10">
         <p class="tittleTache">Vos taches</p>
-        <div>
+        <div *ngIf="data.maitre">
             <button type="button" routerLink="/NouvelleTache" class="btn btn-newTache btn-primary">Nouvele tache</button>
         </div>
         <div class="list-tache">

@@ -1,6 +1,21 @@
 .title-newTache{
+    text-align: left;
     font-size: 50px;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
+}
+label{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.form-card{
+    margin: 40px;
+}
+
+.form-card-bloc{
+    margin-top: 50px;
 }

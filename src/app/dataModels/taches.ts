@@ -6,5 +6,4 @@ export class Taches {
     statut!: string;
     user!: string;
     priorite!: string;
-    piece!: string;
 }

@@ -10,6 +10,7 @@ import { UserService } from 'src/app/service/user-service.service';
   styleUrls: ['./tache-page.component.css']
 })
 export class TachePageComponent {
+  data:any;
   tachesAttente: any;
   tachesEnCour: any;
   updateStatut: any = { statut: 'En_Cour' }
@@ -22,6 +23,11 @@ export class TachePageComponent {
   ngOnInit(): void {
     this.allTacheAttente();
     this.allTacheEnCour();
+    this.userService.decodeToken().subscribe(decodedData => {
+      if (decodedData) {
+        this.data = decodedData
+      }
+    });
   }
 
   activerTache(id: number): void {
@@ -68,6 +74,8 @@ export class TachePageComponent {
       }
     });
   }
+
+  
 
 
 }
