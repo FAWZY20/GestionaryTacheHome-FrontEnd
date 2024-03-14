@@ -44,14 +44,25 @@
                         </div>
                     </div>
                     <div class="row btn-acount">
-                        <div class="col-sm-6">
-                            <button type="button" (click)="deleteUser(data.id)" class="btn btn-danger">Supprimer le
+                        <div class="col-sm-6" *ngIf="data.maitre">
+                            <button type="button" (click)="getFormDelete()" class="btn btn-danger">Supprimer le
                                 compte</button>
                         </div>
                         <div class="col-sm-6">
                             <button type="button" (click)="updateUser()" class="btn btn-primary">Modifier le
                                 compte</button>
                         </div>
+                    </div>
+                    <div class="form-maitre" *ngIf="deleteForm">
+                        <form (ngSubmit)="onSubmitUserDelete()" #tacheForm="ngForm">
+                            <label for="priority" class="label-maitre">Future compte Maitre :</label><br /><br />
+                            <select class="form-control " id="priority" name="priority" [(ngModel)]="user.id" required #id="ngModel" >
+                                <option *ngFor="let famille of familly" [ngValue]="famille.id" >
+                                    {{famille.prenom}}
+                                </option>
+                            </select><br />
+                            <button type="submit" class="btn btn-danger">Supprimer mon compte</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -92,7 +103,8 @@
                                         <tr *ngFor="let famille of familly">
                                             <td>{{famille.prenom}} </td>
                                             <td>{{famille.mail}}</td>
-                                            <td> <button type="button" (click)="deleteUser(famille.id)" class="btn btn-danger">X</button></td>
+                                            <td> <button type="button" (click)="deleteUser(famille.id)"
+                                                    class="btn btn-danger">X</button></td>
                                         </tr>
                                     </tbody>
                                 </table>

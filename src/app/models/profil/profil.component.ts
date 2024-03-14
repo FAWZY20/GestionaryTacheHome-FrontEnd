@@ -13,6 +13,7 @@ export class ProfilComponent {
   familly: any;
   user: User;
   formUser: boolean = false;
+  deleteForm: boolean = false;
 
   constructor(
     private userService: UserService,
@@ -24,8 +25,20 @@ export class ProfilComponent {
     this.formUser = true;
   }
 
+  getFormDelete(){
+    this.deleteForm = true;
+  }
+
   updateUser() {
 
+  }
+
+  onSubmitUserDelete(){
+    this.deleteUser(this.data.id)
+    this.user.maitre = true;
+    this.userService.updateUser(this.user.id, this.user).subscribe(() => {
+      console.log("le compte maitre  bien etait modifier");
+    })
   }
 
   deleteUser(id:number) {
