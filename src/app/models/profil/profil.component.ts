@@ -13,6 +13,7 @@ export class ProfilComponent {
   familly: any;
   user: User;
   formUser: boolean = false;
+  updUser: boolean = false;
   deleteForm: boolean = false;
 
   constructor(
@@ -25,15 +26,15 @@ export class ProfilComponent {
     this.formUser = true;
   }
 
-  getFormDelete(){
+  getFormDelete() {
     this.deleteForm = true;
   }
 
   updateUser() {
-
+    this.updUser = true;
   }
 
-  onSubmitUserDelete(){
+  onSubmitUserDelete() {
     this.deleteUser(this.data.id)
     this.user.maitre = true;
     this.userService.updateUser(this.user.id, this.user).subscribe(() => {
@@ -41,12 +42,12 @@ export class ProfilComponent {
     })
   }
 
-  deleteUser(id:number) {
+  deleteUser(id: number) {
     this.userService.deleteUser(id).subscribe(() => {
-      if(id == this.data.id){
+      if (id == this.data.id) {
         this.router.navigate(['/']);
         localStorage.clear();
-      }else{
+      } else {
         location.reload();
         console.log("utilisateur supprimer");
       }

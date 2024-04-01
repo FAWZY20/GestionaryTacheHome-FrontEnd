@@ -13,106 +13,109 @@
         </div>
         <div class="col-lg-5">
             <div class="card mb-4">
-                <div class="card-body">
-                    <div class="titre-info">
-                        <p>Information sur le compte</p>
+                <div *ngIf="updUser; then thenBlock else elseBlock"></div>
+                    <div class="card-body">
+                        <div class="titre-info">
+                            <p>Information sur le compte</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Nom</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <ng-template #elseBlock class="text-muted mb-0">{{data.nom}} </ng-template>
+                                <ng-template #thenBlock class="text-muted mb-0">
+                                </ng-template>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">prenom</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{data.prenom}} </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{data.mail}} </p>
+                            </div>
+                        </div>
+                <div class="row btn-acount">
+                    <div class="col-sm-6" *ngIf="data.maitre">
+                        <button type="button" (click)="getFormDelete()" class="btn btn-danger">Supprimer le
+                            compte</button>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <p class="mb-0">Nom</p>
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="text-muted mb-0">{{data.nom}} </p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <p class="mb-0">prenom</p>
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="text-muted mb-0">{{data.prenom}} </p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <p class="mb-0">Email</p>
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="text-muted mb-0">{{data.mail}} </p>
-                        </div>
-                    </div>
-                    <div class="row btn-acount">
-                        <div class="col-sm-6" *ngIf="data.maitre">
-                            <button type="button" (click)="getFormDelete()" class="btn btn-danger">Supprimer le
-                                compte</button>
-                        </div>
-                        <div class="col-sm-6">
-                            <button type="button" (click)="updateUser()" class="btn btn-primary">Modifier le
-                                compte</button>
-                        </div>
-                    </div>
-                    <div class="form-maitre" *ngIf="deleteForm">
-                        <form (ngSubmit)="onSubmitUserDelete()" #tacheForm="ngForm">
-                            <label for="priority" class="label-maitre">Future compte Maitre :</label><br /><br />
-                            <select class="form-control " id="priority" name="priority" [(ngModel)]="user.id" required #id="ngModel" >
-                                <option *ngFor="let famille of familly" [ngValue]="famille.id" >
-                                    {{famille.prenom}}
-                                </option>
-                            </select><br />
-                            <button type="submit" class="btn btn-danger">Supprimer mon compte</button>
-                        </form>
+                    <div class="col-sm-6">
+                        <button type="button" (click)="updateUser()" class="btn btn-primary">Modifier le
+                            compte</button>
                     </div>
                 </div>
+                <div class="form-maitre" *ngIf="deleteForm">
+                    <form (ngSubmit)="onSubmitUserDelete()" #tacheForm="ngForm">
+                        <label for="priority" class="label-maitre">Future compte Maitre :</label><br /><br />
+                        <select class="form-control " id="priority" name="priority" [(ngModel)]="user.id" required
+                            #id="ngModel">
+                            <option *ngFor="let famille of familly" [ngValue]="famille.id">
+                                {{famille.prenom}}
+                            </option>
+                        </select><br />
+                        <button type="submit" class="btn btn-danger">Supprimer mon compte</button>
+                    </form>
+                </div>
             </div>
-            <div class="row" *ngIf="data.maitre">
-                <div class="col-md-12">
-                    <div class="card mb-4 mb-md-0">
-                        <div class="card-body">
-                            <p class="mb-4 titre-famille">Famille</p>
-                            <button type="button" (click)="getFormUser()" class="btn btn-primary">Ajouter un
-                                menbre</button>
-                            <div *ngIf="formUser" class="form_user">
-                                <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
-                                    <div class="row formAddArticl-input">
-                                        <div class="col-3">
-                                            <input type="text" id="prenom" name="prenom" class="form-control"
-                                                placeholder="prenom" [(ngModel)]="user.prenom" required
-                                                #prenom="ngModel">
-                                        </div>
-                                        <div class="col-7">
-                                            <input type="email" id="mail" name="mail" class="form-control" min="0"
-                                                placeholder="mail" [(ngModel)]="user.mail" required #mail="ngModel">
-                                        </div>
+        </div>
+        <div class="row" *ngIf="data.maitre">
+            <div class="col-md-12">
+                <div class="card mb-4 mb-md-0">
+                    <div class="card-body">
+                        <p class="mb-4 titre-famille">Famille</p>
+                        <button type="button" (click)="getFormUser()" class="btn btn-primary">Ajouter un
+                            menbre</button>
+                        <div *ngIf="formUser" class="form_user">
+                            <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
+                                <div class="row formAddArticl-input">
+                                    <div class="col-3">
+                                        <input type="text" id="prenom" name="prenom" class="form-control"
+                                            placeholder="prenom" [(ngModel)]="user.prenom" required #prenom="ngModel">
                                     </div>
-                                    <button [disabled]="!courseForm.form.valid" type="submit"
-                                        class="btn btn-primary">Ajouter</button>
-                                </form>
-                            </div>
-                            <div class="tab-family">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">prenom</th>
-                                            <th scope="col">email</th>
-                                            <th scope="col">supprimer</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let famille of familly">
-                                            <td>{{famille.prenom}} </td>
-                                            <td>{{famille.mail}}</td>
-                                            <td> <button type="button" (click)="deleteUser(famille.id)"
-                                                    class="btn btn-danger">X</button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                    <div class="col-7">
+                                        <input type="email" id="mail" name="mail" class="form-control" min="0"
+                                            placeholder="mail" [(ngModel)]="user.mail" required #mail="ngModel">
+                                    </div>
+                                </div>
+                                <button [disabled]="!courseForm.form.valid" type="submit"
+                                    class="btn btn-primary">Ajouter</button>
+                            </form>
+                        </div>
+                        <div class="tab-family">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">prenom</th>
+                                        <th scope="col">email</th>
+                                        <th scope="col">supprimer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let famille of familly">
+                                        <td>{{famille.prenom}} </td>
+                                        <td>{{famille.mail}}</td>
+                                        <td> <button type="button" (click)="deleteUser(famille.id)"
+                                                class="btn btn-danger">X</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
